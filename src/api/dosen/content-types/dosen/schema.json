@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dosens",
+  "info": {
+    "singularName": "dosen",
+    "pluralName": "dosens",
+    "displayName": "dosen",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "nama_dosen": {
+      "type": "string"
+    },
+    "nidn": {
+      "type": "biginteger"
+    },
+    "jadwal_kuliahs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::jadwal-kuliah.jadwal-kuliah"
+    },
+    "matakuliahs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::matakuliah.matakuliah"
+    },
+    "id_finger": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rekap_absensis",
+  "info": {
+    "singularName": "rekap-absensi",
+    "pluralName": "rekap-absensis",
+    "displayName": "rekap absensi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "nama_mahasiswa": {
+      "type": "string"
+    },
+    "nim": {
+      "type": "biginteger"
+    },
+    "kategori_kehadiran": {
+      "type": "enumeration",
+      "enum": [
+        "sangat rajin",
+        "rajin",
+        "cukup rajin",
+        "kurang rajin",
+        "gagal"
+      ]
+    },
+    "mahasiswa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mahasiswa.mahasiswa"
+    },
+    "list_kela": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::list-kelas.list-kelas"
+    },
+    "pertemuan": {
+      "type": "json"
+    },
+    "matakuliah": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::matakuliah.matakuliah",
+      "inversedBy": "rekap_absensi"
+    }
+  }
+}

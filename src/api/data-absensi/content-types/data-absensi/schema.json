@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_absensis",
+  "info": {
+    "singularName": "data-absensi",
+    "pluralName": "data-absensis",
+    "displayName": "data_absensi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nama": {
+      "type": "string"
+    },
+    "nim": {
+      "type": "biginteger"
+    },
+    "masuk": {
+      "type": "datetime"
+    },
+    "keluar": {
+      "type": "datetime"
+    },
+    "tanggal": {
+      "type": "date"
+    },
+    "mahasiswa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mahasiswa.mahasiswa"
+    },
+    "matakuliah": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::matakuliah.matakuliah",
+      "inversedBy": "data_absensi"
+    },
+    "jadwal_kuliah": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jadwal-kuliah.jadwal-kuliah"
+    },
+    "id_finger": {
+      "type": "string"
+    }
+  }
+}

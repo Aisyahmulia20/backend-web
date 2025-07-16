@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mahasiswas",
+  "info": {
+    "singularName": "mahasiswa",
+    "pluralName": "mahasiswas",
+    "displayName": "mahasiswa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "nama_mahasiswa": {
+      "type": "string"
+    },
+    "nim": {
+      "type": "biginteger"
+    },
+    "kelas": {
+      "type": "string"
+    },
+    "data_absensis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::data-absensi.data-absensi"
+    },
+    "rekap_absensi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rekap-absensi.rekap-absensi"
+    },
+    "id_finger": {
+      "type": "string"
+    }
+  }
+}

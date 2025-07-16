@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_kelases",
+  "info": {
+    "singularName": "list-kelas",
+    "pluralName": "list-kelases",
+    "displayName": "list-kelas",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "kelas": {
+      "type": "string"
+    },
+    "programStudi": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string"
+    },
+    "jadwal_kuliahs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::jadwal-kuliah.jadwal-kuliah"
+    }
+  }
+}

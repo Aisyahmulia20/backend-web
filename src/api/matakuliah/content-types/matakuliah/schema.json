@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matakuliahs",
+  "info": {
+    "singularName": "matakuliah",
+    "pluralName": "matakuliahs",
+    "displayName": "matakuliah",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "kode_matakuliah": {
+      "type": "string"
+    },
+    "matakuliah": {
+      "type": "string"
+    },
+    "sks": {
+      "type": "integer"
+    },
+    "semester": {
+      "type": "string"
+    },
+    "programStudi": {
+      "type": "string"
+    },
+    "jadwal_kuliahs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::jadwal-kuliah.jadwal-kuliah"
+    },
+    "data_absensis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::data-absensi.data-absensi"
+    },
+    "rekap_absensis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rekap-absensi.rekap-absensi"
+    },
+    "data_absensi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::data-absensi.data-absensi",
+      "inversedBy": "matakuliah"
+    },
+    "rekap_absensi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rekap-absensi.rekap-absensi",
+      "inversedBy": "matakuliah"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jadwal_kuliahs",
+  "info": {
+    "singularName": "jadwal-kuliah",
+    "pluralName": "jadwal-kuliahs",
+    "displayName": "jadwal_kuliah",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "no": {
+      "type": "integer"
+    },
+    "kelas": {
+      "type": "string"
+    },
+    "matakuliah": {
+      "type": "string"
+    },
+    "dosen": {
+      "type": "string"
+    },
+    "hari": {
+      "type": "string"
+    },
+    "programStudi": {
+      "type": "string"
+    },
+    "SKS": {
+      "type": "integer"
+    },
+    "list_kela": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::list-kelas.list-kelas"
+    },
+    "data_absensis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::data-absensi.data-absensi"
+    },
+    "Jam": {
+      "type": "time"
+    },
+    "jamAkhir": {
+      "type": "time"
+    },
+    "kode_matakuliah": {
+      "type": "string"
+    }
+  }
+}
